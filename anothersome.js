@@ -43,6 +43,10 @@ const range = (start, stop, step) =>
 );
 
 
-const testRange = range.some()
+// const testRange = range(1, 100, 2)
 
-console.log(testRange)
+const hasEven = range(1, 10, 1).some((element) => element % 2 === 0)
+
+// console.log(testRange)
+
+console.log(hasEven);
