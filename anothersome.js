@@ -18,7 +18,7 @@ const role = mainRole.some((exceptRole) => currentRole.includes(exceptRole));
 //! another example here [ for range ]
 // const arr = Array.from([1, 2, 3], (value, i) => value * value) // "_" that means value | "i" means index number
 
-// console.log(arr)
+// !console.log(arr)
 
 //  important note
 
@@ -27,7 +27,7 @@ const role = mainRole.some((exceptRole) => currentRole.includes(exceptRole));
 
 // console.log(arr);
 
-// const range = (start, stop, step) =>
+//! const range = (start, stop, step) =>
 //     Array.from({ length: Math.ceil((stop - start) / step) },
 //     (_, i) => start + i * step
 // );
