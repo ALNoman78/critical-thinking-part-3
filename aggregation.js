@@ -1,6 +1,6 @@
 // console.log("aggregation working")
 
-const products = [
+const sortProducts = [
   {
     id: "p-001",
     productName: "Wireless Bluetooth Earbuds",
@@ -160,15 +160,13 @@ const products = [
     price: 130,
     rating: 4.5,
     stock: 60,
-    },
-];
+  },
+]
+  .filter((items) => items.category === "Electronics")
+  .sort((a, b) => b.price - a.price)
+  .slice(0, 3)
+  .map((product) => {
+    return { name: product.price };
+  });
 
-const sortProducts = products
-.filter((items) => items.category === "Electronics")
-.sort((a,b) => b.price - a.price )
-.slice(0,3)
-.map( (product) => {
-    return { name : product.price}
-})
-
-console.log(sortProducts)
+console.log(sortProducts);
