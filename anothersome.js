@@ -37,15 +37,14 @@ const role = mainRole.some((exceptRole) => currentRole.includes(exceptRole));
 // console.log(testRange)
 
 const range = (start, stop, step) =>
-    Array.from(
+  Array.from(
     { length: Math.ceil((stop - start) / step) },
     (value, i) => start + i * step
-);
-
+  );
 
 // const testRange = range(1, 100, 2)
 
-const hasEven = range(1, 10, 1).some((element) => element % 2 === 0)
+const hasEven = range(1, 10, 1).some((element) => element % 2 === 0);
 
 // console.log(testRange)
 
