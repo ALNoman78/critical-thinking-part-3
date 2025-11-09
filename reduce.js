@@ -16,6 +16,8 @@ const cartItems = [
   { id: "p-010", name: "Bata Leather Shoes", price: 3750, quantity: 1 },
 ];
 
-const subTotal = cartItems.reduce((acc, item) => {} , 0)
+const subTotal = cartItems.reduce((subtotal, product) => {
+  return subtotal = product.price + product.quantity
+}, 0);
 
-console.log(cartItems)
+console.log(subTotal)
