@@ -47,13 +47,13 @@ const playerData = [
 const bestPlayer = playerData.reduce((goodPlayer, player) => {
   // console.log(goodPlayer, player)
   if (goodPlayer.data > player.data) {
-    console.log(goodPlayer)
+    // console.log(goodPlayer)
     return goodPlayer
   }
   return player
 }, playerData[0])
 
-// console.log(bestPlayer)
+console.log(bestPlayer)
 
 
 // const bestPlayer = playerData.reduce((bestScorer, player) => {
