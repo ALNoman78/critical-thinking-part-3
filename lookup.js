@@ -26,4 +26,11 @@ console.log(lookUpTable)
 
 const post = lookUpTable["p-105"]
 
-console.log(post);
+// console.log(post);
+
+
+//todo we also can access the data easily
+
+for (let post in lookUpTable) {
+    console.log(post);
+}
