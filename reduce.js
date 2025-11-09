@@ -16,8 +16,32 @@ const cartItems = [
   { id: "p-010", name: "Bata Leather Shoes", price: 3750, quantity: 1 },
 ];
 
-const subTotal = cartItems.reduce((subtotal, product) => {
-  return subtotal = product.price + product.quantity
-}, 0);
+const subTotalItems = cartItems.reduce((subtotal, product) => {
+  // console.log(subtotal, product)s
+  return subtotal + product.price * product.quantity
+}, 0)
 
-console.log(subTotal)
+//? console.log(subTotalItems)
+
+const playerData = [
+  { name: "Lionel Messi", data: 95 },
+  { name: "Cristiano Ronaldo", data: 93 },
+  { name: "Neymar Jr", data: 91 },
+  { name: "Kylian Mbappé", data: 92 },
+  { name: "Kevin De Bruyne", data: 91 },
+  { name: "Mohamed Salah", data: 90 },
+  { name: "Virgil van Dijk", data: 89 },
+  { name: "Robert Lewandowski", data: 91 },
+  { name: "Harry Kane", data: 88 },
+  { name: "Luka Modrić", data: 87 }
+];
+
+
+const bestPlayer = playerData.reduce((bestScorer, player) => {
+  console.log(bestScorer, player)
+  if (bestScorer.data > player.data) {
+    console.log(bestScorer)
+    return bestScorer
+  }
+  return player;
+}, playerData[0])
