@@ -41,15 +41,23 @@ const surveyResponses = [
 
 const count = surveyResponses.reduce((table, response) => {
 
-    console.log(table, " : ", response)
+    console.log(table, response)
 
-    if (table[response]) {
-        table[response] = ++table[response] //? Here I also check the value available or not and if it's available there I should add the value and increment the value her
-    } else {
-        table[response] = 1 //? The data is not available then I should initialize with one
-    }
+    //todo readable code
 
-    return table;
+    // if (table[response]) {
+    //     table[response] = ++table[response]
+    // } else {
+    //     table[response] = 1
+    // }
+
+    // return table
+
+    // todo [ here is the one liner of this code ]
+
+    table[response] = (table[response] || 0) + 1
+
+    return table
 
 }, {})
 
