@@ -51,7 +51,7 @@ const count = surveyResponses.reduce((table, response) => {
     //     table[response] = 1
     // }
 
-    // return table
+    // return table    //!! the best code is what you can understand and read also that's the best code for me
 
     // todo [ here is the one liner of this code ]
 
