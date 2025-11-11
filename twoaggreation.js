@@ -100,10 +100,11 @@ const surveyResponses = [
 
 const repeatData = surveyResponses.reduce((table, response) => {
 
+    console.log(table, response)
     if (table[response]) {
-        table[response] = ++table[response]
+        table[response] = ++table[response] // true then increment 
     } else {
-        table[response] = 1
+        table[response] = 1 // false initial with value one
     }
 
     return table
