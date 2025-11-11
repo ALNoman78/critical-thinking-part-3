@@ -31,11 +31,11 @@ const products = [
 const salesTables = products.reduce((table, sale) => {
 
     console.log(table, ":", sale)
-    const { category, price, quantity } = sale
+    const { category, price, quantity } = sale //! destructure object data here
 
     if (!table[category]) {
-
-        table[category] = {
+        //! here is the empty object initialize 
+        table[category] = {  
             totalRevenue: 0,
             totalCost: 0,
         }
@@ -44,5 +44,5 @@ const salesTables = products.reduce((table, sale) => {
     table[category].totalCost += quantity;
 
     return table;
-}, {})
+}, {}) //! also there is empty object
 console.log(salesTables)
