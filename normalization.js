@@ -1,0 +1,1 @@
+console.log("Normalization file added to the repos")
