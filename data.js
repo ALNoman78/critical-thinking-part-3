@@ -28,40 +28,62 @@ const products = [
 // console.log(data)
 
 
-const salesTables = products.reduce((table, sale) => {
+// const salesTables = products.reduce((table, sale) => {
 
-    console.log(table, ":", sale)
-    const { category, price, quantity } = sale //! destructure object data here
+//     console.log(table, ":", sale)
+//     const { category, price, quantity } = sale //! destructure object data here
 
-    if (!table[category]) {
-        //! here is the empty object initialize 
-        table[category] = {  
-            totalRevenue: 0,
+//     if (!table[category]) {
+//         //! here is the empty object initialize
+//         table[category] = {
+//             totalRevenue: 0,
+//             totalCost: 0,
+//         }
+//     }
+//     table[category].totalRevenue += price * quantity;
+//     table[category].totalCost += quantity;
+
+//     return table;
+// }, {}) //! also there is empty object
+// console.log(salesTables)
+
+
+// const reduce = products.reduce((table, item) => {
+//     const { category, price, quantity } = item
+
+//     if (!table[category]) {
+
+//         table[category] = {
+//             totalCost: 0,
+//             totalRevenue: 0,
+//         }
+//     }
+//     table[category].totalCost += price * quantity;
+//     table[category].totalRevenue += quantity;
+
+//     return table;
+// }, {})
+
+// console.log(reduce)
+
+
+
+const salesTable = products.reduce((table, sales) => {
+
+    console.log(table, ":", sales)
+    const { category, price, quantity } = sales
+
+    if (!table[sales]) {
+        table[category] = { // here is the category initialize
             totalCost: 0,
+            totalRevenue: 0,
         }
     }
-    table[category].totalRevenue += price * quantity;
-    table[category].totalCost += quantity;
 
-    return table;
-}, {}) //! also there is empty object
-console.log(salesTables)
-
-
-const reduce = products.reduce((table, item) => {
-    const { category, price, quantity } = item
-
-    if (!table[category]) {
-
-        table[category] = {
-            totalCost: 0,
-            totalRevenue: 0,
-        }
-    }
     table[category].totalCost += price * quantity;
     table[category].totalRevenue += quantity;
 
     return table;
 }, {})
 
-console.log(reduce)
+console.log(salesTable)
