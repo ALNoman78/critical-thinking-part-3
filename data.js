@@ -46,3 +46,22 @@ const salesTables = products.reduce((table, sale) => {
     return table;
 }, {}) //! also there is empty object
 console.log(salesTables)
+
+
+const reduce = products.reduce((table, item) => {
+    const { category, price, quantity } = item
+
+    if (!table[category]) {
+
+        table[category] = {
+            totalCost: 0,
+            totalRevenue: 0,
+        }
+    }
+    table[category].totalCost += price * quantity;
+    table[category].totalRevenue += quantity;
+
+    return table;
+}, {})
+
+console.log(reduce)
