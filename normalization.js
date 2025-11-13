@@ -24,8 +24,10 @@ const posts = [
 
 // todo create hash table of post
 
-// !! how to create a look up table 
+// !! how to create a look up table
 
+
+// ? order of N => O(n)
 const postByUser = posts.reduce((table, post) => {
     const { userID } = post
 
@@ -37,4 +39,14 @@ const postByUser = posts.reduce((table, post) => {
     return table;
 }, {})
 
-console.log(postByUser)
+
+// ? order of one => O(n)
+const userWithPost = users.map((user) => {
+    return {
+        ...user,
+
+        posts: postByUser[user.id] || [],
+    }
+})
+
+console.log(JSON.stringify(userWithPost))
