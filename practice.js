@@ -8,7 +8,7 @@ const books = [
 
 const lookupTable = books.reduce((table, data) => {
 
-    console.log(table, ": ", data)
+    // console.log(table, ": ", data)
     const { id } = data
     table[id] = data
 
