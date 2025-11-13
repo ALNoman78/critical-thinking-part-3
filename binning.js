@@ -21,22 +21,23 @@ const getBinningTimeStamp = (timestamp) => {
 }
 
 
-// const binnedData = events.reduce((acc, event) => {
-//     const bin = getBinningTimeStamp(event.timestamp)
+const binnedData = events.reduce((acc, event) => {
 
-//     if (!acc[bin]) {
-//         acc[bin] = {
-//             totalTime: 0,
-//         }
-//     }
+    const bin = getBinningTimeStamp(event.timestamp)
 
-//     acc[bin].totalTime += 1;
+    if (!acc[bin]) {
+        acc[bin] = {
+            totalTime: 0,
+        }
+    }
 
-//     return acc;
-// }, {})
+    acc[bin].totalTime += 1;
 
-// console.log(binnedData);
+    return acc;
+}, {})
 
-console.log(getBinningTimeStamp("2025-10-22T11:02:00Z"));
+console.log(binnedData);
+
+// console.log(getBinningTimeStamp("2025-10-22T11:02:00Z"));
 // console.log(getBinningTimeStamp("2025-10-22T10:14:00Z"));
 // console.log(getBinningTimeStamp("2025-10-22T11:02:00Z"));
